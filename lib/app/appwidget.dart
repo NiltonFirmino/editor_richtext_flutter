@@ -1,19 +1,29 @@
+   
 import 'package:flutter/material.dart';
 
-import 'models/splash.dart';
+import 'models/editor/editor.dart';
+import 'models/home/home.dart';
+import 'models/splash/splash.dart';
+
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return  MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (_) => const SplashPage(),
+          '/auth': (_) => const EditorText(),
+          '/home': (_) => const MyHomePage(),
+        },
+      
     );
   }
 }

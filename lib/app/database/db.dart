@@ -26,11 +26,11 @@ class DB {
   }
 
   _onCreate(db, version) async {
-    await db.execute(_salvedtext);
+    await db.execute(_savedtext);
   }
 
-  String get _salvedtext => '''
-    CREATE TABLE salvedtext(
+  String get _savedtext => '''
+    CREATE TABLE savedtext(
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       title TEXT,
       textedit TEXT,
